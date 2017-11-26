@@ -6,6 +6,22 @@ Changes to the original source fixes a few issues and changes the installation p
 
 His original README.md is displayed below the instructions.
 
+## Instructions
+
+### Debian
+```
+curl http://88.99.137.36/dhuck/dotfiles/blob/221ead1a00f54911d09c12f6380465cdc514785c/install/deb-install.sh | sh
+```
+
+### OSX
+
+```
+http://88.99.137.36/dhuck/dotfiles/blob/221ead1a00f54911d09c12f6380465cdc514785c/install/osx-install.sh | sh
+```
+
+NOTE: The OSX version has not been changed from harrington's config. My own vimrc has been swapped out.
+:wq
+
 # Obligatory Dotfile Repo
 
 Nothing super crazy going on here, but some sensable vim and tmux configs.
