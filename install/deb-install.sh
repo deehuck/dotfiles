@@ -3,20 +3,32 @@
 echo "Welcome to deehuck's dotfiles for linux. big ups to mharington for the legwork"
 
 # Install required programs for sexiness
-
 echo "Don't worry this repo isn't nefarious. Won't hurt yr apt-get one bit 😘"
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
 
+
 echo "making sure everything is installed on this machine...
-      git, node tmux lua neovim irssi and rcm"
-sudo apt-get -y install git node tmux lua neovim irrsi rcm
+      git, node tmux lua neovim irssi and rcm htop fortune slurm multitail"
+sudo apt-get -y install git htop fortune nodejs tmux lua5.1 slurm neovim irrsi rcm multitail
+
 
 echo "Cloning the dotfiles to .dotfiles directory"
 echo "Feel free to create your own custom branch and make changes"
-
 git clone ssh://git@88.99.137.36:2273/dhuck/dotfiles.git ~/.dotfiles
+
+
+echo "Checking and Install oh-my-zsh.sh"
+
+ohmyzsh="$HOME/.oh-my-zsh"
+if [ -f "$ohmyzsh" ]
+then
+  echo "Oh My ZSH! is already installed. Nothing to do"
+else
+  echo "Install Oh My ZSH!"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
 cd $HOME
 :
