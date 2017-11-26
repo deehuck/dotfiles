@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 
 # CUSTOM POWERLEVEL9K
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context rbenv virtualenv git)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context rbenv virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs ip public_ip load battery root_indicator history)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''

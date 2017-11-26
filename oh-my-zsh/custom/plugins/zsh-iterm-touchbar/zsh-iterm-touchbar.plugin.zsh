@@ -133,7 +133,7 @@ function _displayDefault() {
 
     echo -ne "\033]1337;SetKeyLabel=F4=👊\a"
     local commitMessage=''
-    bindkey -s '^[OS' 'local commitMessage='' && vared -p "Enter a commit message: " -c commitMessage && git commit -a -m "$commitMessage" \n'
+    bindkey -s '^[OS' 'commit'
 
     echo -ne "\033]1337;SetKeyLabel=F6=📥\a"
     bindkey -s '^[[17~' 'git pull \n'
