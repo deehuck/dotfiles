@@ -41,6 +41,12 @@ echo "--------------------------------------------------------------"
 echo "Changing over to zsh"
 chsh -s $(which zsh)
 
+#Clean up superfluous files created by rcup
+cd $HOME
+rm README.md
+rm CHANGELOG
+rm LICENSE
+
 echo "All done!"
 echo ""
 echo "If some things did not change like expected, you may need to manually symlink"
