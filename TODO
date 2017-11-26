@@ -1,0 +1,4 @@
+#! /env/bin/zsh
+
+# TODO: Edit and clean up the osx install image. Get rid of that hammer bullshit
+# as well as weechat. Force overwrite in rcup?
