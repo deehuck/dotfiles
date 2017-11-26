@@ -6,7 +6,6 @@
 export TERM="xterm-256color"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -88,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 
 # CUSTOM POWERLEVEL9K
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context rbenv virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context rbenv virtualenv git)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time background_jobs ip public_ip load battery root_indicator history)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
