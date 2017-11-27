@@ -45,7 +45,7 @@ rcup
 
 echo "--------------------------------------------------------------"
 echo "Changing over to zsh"
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 zsh
 
 #Clean up superfluous files created by rcup
