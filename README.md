@@ -40,6 +40,9 @@ pip3 install neovim
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
 
+## Issues
+
+Currently, there seems to be an issue with gitgutter where it needs different configuration options for debian and OSX. The configuration file currently works fine on OSX but will need to be updated to work on debian. Fix for this is coming.
 # Obligatory Dotfile Repo
 
 Nothing super crazy going on here, but some sensable vim and tmux configs.
