@@ -1,33 +1,51 @@
-# dhuck's dotfile.
+# dhuck's dotfile
 
-At the moment, this is a straight rip of mhartington's [github repo](https://github.com/mhartington/dotfiles). He is sole inspiration of making this repo.
-
-Changes to the original source fixes a few issues and changes the installation process to make this work on linux distrbutions as well as OSX which it already supports.
+This is a fork of mharrington's [github repo](https://github.com/mhartington/dotfiles). He is the inspiration of making this repo.
 
 His original README.md is displayed below the instructions.
 
-## OSX
+## Requirements
 
-### Requirements
+This repo requires neovim, python3, rcm, git, and fortune. It is also required on Debian/Ubuntu for htop, slurm, and multitail to be installed.
 
-The installation script will check for homebrew and other oddities that are required for the operation of all the dotfiles. Python3 is required as well.
+## Install
 
-### Install
+If you are installing on a fresh machine and can use a script to install all of your tools, use the following scripts for OSX and debian. You can also run the following commands if you want to double check the above requirements.
+
+### OSX
 
 ```
 curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ```
 
-## Debian
-
-## Requirements
-
-Python3 is required for deoplete as well as your general well being. The installation of python3 is left as an exercise for the enduser. The installation script will also install htop, slurm, fortune, nodejs, irssi, rcm, and multitail as well as check for git, neovim, and tmux.
-
-### Install
+### Debian
 
 ```
 curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
+```
+
+If you already have the requirements installed you can use the following commands to install and link your resource files
+
+### OSX
+
+```
+brew tap thoughtbot/formulae
+brew install rcm
+git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
+cd $HOME
+rcup
+```
+
+### Debian
+
+```
+wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
+echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+sudo apt-get update
+sudo apt-get install rcm
+git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
+cd $HOME
+rcup
 ```
 
 ## Troubleshooting
@@ -43,9 +61,6 @@ Restart neovim and run the :UpdateRemotePlugins and deoplete should operate norm
 ## Issues
 
 Currently, there seems to be an issue with gitgutter where it needs different configuration options for debian and OSX. The configuration file currently works fine on OSX but will need to be updated to work on debian. Fix for this is coming.
-# Obligatory Dotfile Repo
-
-Nothing super crazy going on here, but some sensable vim and tmux configs.
 
 ## Note to iterm
 Iterm nightly is a must.
@@ -113,25 +128,8 @@ My status bar for tmux is custom, only using a few plugins for battery charge an
 I think that's it, probably missed a few things here and there or spelled something wrong.
 This is more for my own sake when setting up a new machine so I can figure out what the fuck is actually going on.
 
-
-## Install
-Note this install is if you have a new machine, and need everything setup.
-For that, I sugguest
-
-```
-curl https://cdn.rawgit.com/mhartington/dotfiles/master/install.sh | sh
-```
-If you already have things like git, homebrew,node etc installed, then here have a cookie and sit back.
-You should just be able to just run these few lines.
-
-```
-brew tap thoughtbot/formulae
-brew install rcm
-git clone https://github.com/mhartington/dotfiles.git ~/.dotfiles
-cd $HOME
-rcup
-```
 ## Inspiration
+- [mharrington's Dotfiles](https://github.com/mhartington/dotfiles)
 - [Maximum Awesome](https://github.com/square/maximum-awesome)
 - [Paul's Dotfiles](https://github.com/paulirish/dotfiles)
 - [Andrew's Dotfiles](https://github.com/ajoslin/dot)
