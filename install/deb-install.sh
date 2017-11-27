@@ -13,7 +13,7 @@ sudo apt-get update
 
 echo "making sure everything is installed on this machine...
       git, node tmux lua neovim irssi and rcm htop fortune slurm multitail"
-sudo apt-get -y install git htop fortune nodejs tmux lua5.1 slurm neovim irrsi rcm multitail
+sudo apt-get -y install git htop fortune nodejs tmux lua5.1 slurm neovim irssi rcm multitail
 
 
 echo "Cloning the dotfiles to .dotfiles directory"
