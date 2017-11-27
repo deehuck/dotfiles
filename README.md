@@ -6,7 +6,7 @@ His original README.md is displayed below the instructions.
 
 ## Requirements
 
-This Repo requires Python3, tmux, git, nvim, zsh, and fortune to work completely. Ubuntu/Debian also requires multitail for certain aliases.
+This Repo requires Python3, tmux, git, nvim, zsh, and fortune to work completely. Debian/Ubuntu also requires multitail for certain aliases.
 
 ## Install
 
@@ -15,13 +15,13 @@ If you are installing on a fresh machine or would like to double check requireme
 ### OSX
 
 ```
-curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
+curl https://raw.githubusercontent.com/deehuck/dotfiles/master/install/osx-install.sh | sh
 ```
 
-### Debian
+### Debian/Ubuntu
 
 ```
-curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
+curl https://raw.githubusercontent.com/deehuck/dotfiles/master/install/deb-install.sh | sh
 ```
 
 Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.

@@ -20,7 +20,7 @@ echo "Cloning the dotfiles to .dotfiles directory"
 echo "Feel free to create your own custom branch and make changes"
 
 cd $HOME
-git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
+git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
 
 # Set up oh my zsh
 echo "Checking and Install oh-my-zsh.sh"

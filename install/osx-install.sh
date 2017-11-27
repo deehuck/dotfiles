@@ -44,7 +44,7 @@ fi
 echo "---------------------------------------------------------"
 
 echo "Cloning Mike's dotfiles insto .dotfiles"
-git clone ssh://git@88.99.137.36:2273/dhuck/dotfiles.git ~/.dotfiles
+git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
 
 cd .dotfiles
 # git submodule update --init --recursive
