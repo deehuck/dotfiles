@@ -36,7 +36,7 @@ cd $HOME
 rcup
 ```
 
-### Debian
+### Debian/Ubuntu
 
 ```
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
