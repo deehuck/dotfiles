@@ -40,7 +40,7 @@ cd $HOME
 :
 echo "running RCM's rcup command"
 echo "This will symlink the rc files in $HOME to those in the dotfiles directory"
-rcup
+rcup -f
 
 
 echo "--------------------------------------------------------------"
