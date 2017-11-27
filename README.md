@@ -6,11 +6,11 @@ His original README.md is displayed below the instructions.
 
 ## Requirements
 
-This repo requires neovim, python3, rcm, git, and fortune. It is also required on Debian/Ubuntu for htop, slurm, and multitail to be installed.
+This Repo requires Python3, tmux, git, nvim, zsh, and fortune to work completely. Ubuntu/Debian also requires multitail for certain aliases.
 
 ## Install
 
-If you are installing on a fresh machine and can use a script to install all of your tools, use the following scripts for OSX and debian. You can also run the following commands if you want to double check the above requirements.
+If you are installing on a fresh machine or would like to double check requirements, run one of the following scripts:
 
 ### OSX
 
@@ -24,7 +24,9 @@ curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
 ```
 
-If you already have the requirements installed you can use the following commands to install and link your resource files
+Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.
+
+If you already have the requirements installed you can use the following commands to install and link your resource files.
 
 ### OSX
 
@@ -57,6 +59,8 @@ pip3 install neovim
 ```
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
+
+# mharrington's Notes
 
 ## Issues
 
