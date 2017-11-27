@@ -12,12 +12,14 @@ sudo apt-get update
 
 
 echo "making sure everything is installed on this machine...
-      git, node tmux lua neovim irssi and rcm htop fortune slurm multitail"
-sudo apt-get -y install git htop fortune nodejs tmux lua5.1 slurm neovim irssi rcm multitail
+      git, node tmux neovim irssi and rcm htop fortune slurm multitail"
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail
 
 
 echo "Cloning the dotfiles to .dotfiles directory"
 echo "Feel free to create your own custom branch and make changes"
+
+cd $HOME
 git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
 
 # Set up oh my zsh
@@ -44,13 +46,10 @@ rcup
 echo "--------------------------------------------------------------"
 echo "Changing over to zsh"
 chsh -s $(which zsh)
-
+zsh
 
 #Clean up superfluous files created by rcup
 cd $HOME
-rm README.md
-rm CHANGELOG
-rm LICENSE
 rm -rf .install
 
 
