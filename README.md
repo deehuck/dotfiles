@@ -6,21 +6,39 @@ Changes to the original source fixes a few issues and changes the installation p
 
 His original README.md is displayed below the instructions.
 
-## Instructions
+## OSX
 
-### Debian
-```
-curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
-```
+### Requirements
 
-### OSX
+The installation script will check for homebrew and other oddities that are required for the operation of all the dotfiles. Python3 is required as well.
+
+### Install
 
 ```
 curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ```
 
-NOTE: The OSX version has not been changed from harrington's config. My own vimrc has been swapped out.
-:wq
+## Debian
+
+## Requirements
+
+Python3 is required for deoplete as well as your general well being. The installation of python3 is left as an exercise for the enduser. The installation script will also install htop, slurm, fortune, nodejs, irssi, rcm, and multitail as well as check for git, neovim, and tmux.
+
+### Install
+
+```
+curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
+```
+
+## Troubleshooting
+
+If deoplete gives an error on first run of nvim, run the following command to add python3 neovim support:
+
+```
+pip3 install neovim
+```
+
+Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
 
 # Obligatory Dotfile Repo
 
