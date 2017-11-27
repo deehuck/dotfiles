@@ -18,7 +18,7 @@ sudo apt-get -y install git htop fortune nodejs tmux lua5.1 slurm neovim irssi r
 
 echo "Cloning the dotfiles to .dotfiles directory"
 echo "Feel free to create your own custom branch and make changes"
-git clone ssh://git@88.99.137.36:2273/dhuck/dotfiles.git ~/.dotfiles
+git clone http://git@88.99.137.36:2273/dhuck/dotfiles.git ~/.dotfiles
 
 
 # Set up oh my zsh
