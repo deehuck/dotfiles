@@ -18,7 +18,6 @@ packages=(
 "tmux"
 "lua"
 "neovim"
-"weechat --with-lua --with-perl --with-python --with-ruby"
 )
 
 for i in "${packages[@]}"
@@ -45,10 +44,10 @@ fi
 echo "---------------------------------------------------------"
 
 echo "Cloning Mike's dotfiles insto .dotfiles"
-git clone https://github.com/mhartington/dotfiles.git ~/.dotfiles
+git clone ssh://git@88.99.137.36:2273/dhuck/dotfiles.git ~/.dotfiles
 
 cd .dotfiles
-git submodule update --init --recursive
+# git submodule update --init --recursive
 
 cd $HOME
 echo "running RCM's rcup command"
@@ -66,15 +65,17 @@ chsh -s $(which zsh)
 echo "You'll need to log out for this to take effect"
 echo "---------------------------------------------------------"
 
-echo "running oxs defaults"
+echo "running osx defaults"
 ~./osx.sh
 
 echo "---------------------------------------------------------"
-echo "Downloading Hammerspoon"
-cd ~/Downloads
-curl https://github.com/Hammerspoon/hammerspoon/releases/download/0.9.43/Hammerspoon-0.9.43.zip | unzip
-unzip Hammerspoon-0.9.43.zip
-mv Hammerspoon /Applications/
+# Removing hammerspoon until a later date.
+
+# echo "Downloading Hammerspoon"
+# cd ~/Downloads
+# curl https://github.com/Hammerspoon/hammerspoon/releases/download/0.9.43/Hammerspoon-0.9.43.zip | unzip
+# unzip Hammerspoon-0.9.43.zip
+# mv Hammerspoon /Applications/
 echo 'done'
 echo "---------------------------------------------------------"
 echo "All done!"
