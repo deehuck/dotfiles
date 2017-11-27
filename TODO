@@ -1,4 +1,7 @@
 #! /env/bin/zsh
 
-# TODO: Edit and clean up the osx install image. Get rid of that hammer bullshit
+# DONE: Edit and clean up the osx install image. Get rid of that hammer bullshit
 # as well as weechat. Force overwrite in rcup?
+#
+# TODO: deoplete is breaking on debian distros. Python3 is not installing in a
+# way that is conducive to neovim running nice and pretty.
