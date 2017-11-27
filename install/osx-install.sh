@@ -12,11 +12,11 @@ else
 
 fi
 
+# lua is required with hammerspoon
 packages=(
 "git"
 "node"
 "tmux"
-"lua"
 "neovim"
 )
 
