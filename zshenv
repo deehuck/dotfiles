@@ -1,12 +1,12 @@
 export KEYTIMEOUT=1
 export TERMINAL_DARK=1
-export TERM=xterm-256color-italic
+# export TERM=xterm-256color-italic
 export CLICOLOR=1
 export EDITOR=nvim
 # export BREW_PATH=$(brew --prefix)
 export GOPATH=$HOME/go
 export _Z_DATA="$HOME/z-data"
-export JOURNAL_DIR="/Users/mhartington/Journal"
+# export JOURNAL_DIR="/Users/mhartington/Journal"
 export NVIM_PYTHON_LOG_FILE=/tmp/log
 export NVIM_PYTHON_LOG_LEVEL=DEBUG
 # This is for android crap
