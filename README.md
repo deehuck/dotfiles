@@ -33,7 +33,7 @@ If you already have the requirements installed you can use the following command
 ```
 brew tap thoughtbot/formulae
 brew install rcm
-git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
+git https://github.com/deehuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
@@ -45,7 +45,7 @@ wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
 sudo apt-get install rcm
-git clone http://88.99.137.36/dhuck/dotfiles.git ~/.dotfiles
+git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
