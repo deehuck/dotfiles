@@ -10,13 +10,13 @@ His original README.md is displayed below the instructions.
 
 ### Debian
 ```
-curl http://88.99.137.36/dhuck/dotfiles/blob/221ead1a00f54911d09c12f6380465cdc514785c/install/deb-install.sh | sh
+curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
 ```
 
 ### OSX
 
 ```
-http://88.99.137.36/dhuck/dotfiles/blob/221ead1a00f54911d09c12f6380465cdc514785c/install/osx-install.sh | sh
+curl http://88.99.137.36/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ```
 
 NOTE: The OSX version has not been changed from harrington's config. My own vimrc has been swapped out.
