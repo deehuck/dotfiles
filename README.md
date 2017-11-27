@@ -58,6 +58,9 @@ pip3 install neovim
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
 
+### Issues
+
+Deoplete seems to break on debian machines with the current config. Works :100: otherwise.
 # mharrington's Notes
 
 Everything below is lifted from mharington's repo page. This will change overtime as I make my own changes.
