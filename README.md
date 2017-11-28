@@ -16,6 +16,8 @@ If you are installing on a fresh machine or would like to double check requireme
 curl https://raw.githubusercontent.com/deehuck/dotfiles/master/install/osx-install.sh | sh
 ```
 
+Note: The OSX scripts will install homebrew versions of the required packages. This will make you a sadder human if you already have them set up outside of brew.
+
 ### Debian/Ubuntu
 
 ```
@@ -31,7 +33,7 @@ If you already have the requirements installed you can use the following command
 ```
 brew tap thoughtbot/formulae
 brew install rcm
-git https://github.com/deehuck/dotfiles.git ~/.dotfiles
+git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
