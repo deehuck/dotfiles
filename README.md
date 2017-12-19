@@ -8,6 +8,8 @@ This Repo requires Python3, tmux, git, nvim, zsh, and fortune to work completely
 
 ## Install
 
+<span style='color:red'>WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT ANDWISH TO SAVE YOUR CURRENT CONFIGS
+
 If you are installing on a fresh machine or would like to double check requirements, run one of the following scripts:
 
 ### OSX
