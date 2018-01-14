@@ -66,14 +66,14 @@
 
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/context_filetype.vim')
-  call dein#add('chemzqm/denite-git')
+"""""  call dein#add('chemzqm/denite-git')
   call dein#add('ternjs/tern_for_vim', {'build': 'npm install'})
   call dein#add('carlitux/deoplete-ternjs')
   call dein#add('artur-shaik/vim-javacomplete2')
   call dein#add('Shougo/neco-vim')
   call dein#add('Shougo/neoinclude.vim')
   call dein#add('ujihisa/neco-look')
-  call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
+"  call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
   call dein#add('zchee/deoplete-jedi')
   call dein#add('zchee/nvim-go', {'build': 'gb build', 'on_ft': 'go'})
   call dein#add('zchee/deoplete-go')
@@ -340,8 +340,8 @@
 
 " Python --------------------------------------------------------------------{{{
 
-  let g:python_host_prog = '/usr/local/bin/python2'
-  let g:python3_host_prog = '/usr/local/bin/python3'
+  let g:python_host_prog = '/usr/bin/python2'
+  let g:python3_host_prog = '/usr/bin/python3'
   " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
   let g:jedi#auto_vim_configuration = 0
   let g:jedi#documentation_command = "<leader>k"
