@@ -2,11 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
-export TERM="xterm-256color"
+  export ZSH=~/.oh-my-zsh
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="spaceship"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +58,9 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-iterm-touchbar)
+plugins=(
+  git virtualenv battery zsh-iterm-touchbar
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,21 +93,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# load alias file so separate aliases can be on both OSX and linux
-source $HOME/.aliases
-
-# CUSTOM POWERLEVEL9K
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context rbenv virtualenv dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time load battery root_indicator history)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%K{black}%F{white} 👉 🍕 🕒 `date +%T` $ %f%k%F{black}%f "
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PUBLIC_IP_METHODS=dig
-# POWERLEVEL9K_COLOR_SCHEME='contrast'
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+source ~/.aliases
+echo ""
+echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
 echo ""
 fortune
+echo ""
+echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
+
