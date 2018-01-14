@@ -341,7 +341,14 @@
 " Python --------------------------------------------------------------------{{{
 
   let g:python_host_prog = '/usr/bin/python2.7'
-  let g:python3_host_prog = '/usr/local/bin/python3'
+  if has('macunix')
+    let g:python3_host_prog = '/usr/local/bin/python3'
+
+  elseif has('unix')
+    let g:python3_host_prog = '/usr/bin/python3'
+
+  endif
+
   " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
   let g:jedi#auto_vim_configuration = 0
   let g:jedi#documentation_command = "<leader>k"
