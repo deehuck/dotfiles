@@ -58,8 +58,8 @@
   call dein#add('mattn/emmet-vim')
   call dein#add('sbdchd/neoformat')
 " deoplete stuff
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/deol.nvim')
+"  call dein#add('Shougo/deoplete.nvim')
+"  call dein#add('Shougo/deol.nvim')
 
   call dein#add('Shougo/denite.nvim')
   " call dein#add('ctrlpvim/ctrlp.vim')
