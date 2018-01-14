@@ -43,7 +43,7 @@ if [ ! -n "$SPACESHIP_PROMPT_ORDER" ]; then
     kubecontext
     exec_time
     line_sep
-    battery
+#    battery
     vi_mode
     jobs
     exit_code
