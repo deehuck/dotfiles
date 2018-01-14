@@ -38,8 +38,7 @@ cd $HOME
 rcup
 ```
 
-### Debian/Ubuntu
-
+### Debian
 ```
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
@@ -55,14 +54,11 @@ rcup
 If deoplete gives an error on first run of nvim, run the following command to add python3 neovim support:
 
 ```
-pip3 install neovim
+sudo pip3 install neovim
 ```
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
 
-### Issues
-
-Deoplete seems to break on debian machines with the current config. Works :100: otherwise.
 # mharrington's Notes
 
 Everything below is lifted from mharington's repo page. This will change overtime as I make my own changes.
