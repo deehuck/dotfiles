@@ -15,6 +15,13 @@ echo "making sure everything is installed on this machine...
       git, node tmux neovim irssi and rcm htop fortune slurm multitail"
 sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail
 
+echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
+echo ""
+echo "Installing necessary pip packages for nvim"
+echo ""
+echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
+sudo pip install neovim
+sudo pip3 install neovim
 
 echo "Cloning the dotfiles to .dotfiles directory"
 echo "Feel free to create your own custom branch and make changes"
