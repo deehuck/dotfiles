@@ -59,7 +59,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git virtualenv battery
+  git virtualenv battery zsh-iterm-touchbar
 )
 
 source $ZSH/oh-my-zsh.sh
