@@ -58,8 +58,8 @@
   call dein#add('mattn/emmet-vim')
   call dein#add('sbdchd/neoformat')
 " deoplete stuff
-"  call dein#add('Shougo/deoplete.nvim')
-"  call dein#add('Shougo/deol.nvim')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/deol.nvim')
 
   call dein#add('Shougo/denite.nvim')
   " call dein#add('ctrlpvim/ctrlp.vim')
@@ -73,7 +73,7 @@
   call dein#add('Shougo/neco-vim')
   call dein#add('Shougo/neoinclude.vim')
   call dein#add('ujihisa/neco-look')
-"  call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
+  call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
   call dein#add('zchee/deoplete-jedi')
   call dein#add('zchee/nvim-go', {'build': 'gb build', 'on_ft': 'go'})
   call dein#add('zchee/deoplete-go')
