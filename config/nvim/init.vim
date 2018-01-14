@@ -345,6 +345,9 @@
   if !has("python3")
     let g:python3_host_prog = '/usr/bin/python3'
   endif
+  if !has("python3")
+    let g:python3_host_prog = '/usr/bin/python3.6'
+  endif
 
   " let $NVIM_PYTHON_LOG_FILE='nvim-python.log'
   let g:jedi#auto_vim_configuration = 0
