@@ -24,7 +24,7 @@ echo " "
 echo "Don't worry this repo isn't nefarious. Won't hurt yr apt-get one bit 😘"
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 wait 3
-exit 0
+
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo " deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
