@@ -15,13 +15,13 @@ If you are installing on a fresh machine or would like to double check requireme
 ### OSX
 
 ```sh
-curl https://git.brain.rip/dhuck/dotfiles/raw/0bb8e3d9185d5ca412ca3ef85a24733271fe4e41/install/osx-install.sh | sh
+curl https://git.brain.rip/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ```
 
 ### Debian/Ubuntu
 
 ```sh
-curl https://git.brain.rip/dhuck/dotfiles/raw/0bb8e3d9185d5ca412ca3ef85a24733271fe4e41/install/deb-install.sh | sh
+curl https://git.brain.rip/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
 ```
 
 Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.
