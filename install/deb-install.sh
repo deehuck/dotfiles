@@ -36,11 +36,11 @@ sudo apt-get update
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
 echo " making sure everything is installed on this machine...
-      git, node tmux neovim irssi and rcm htop fortune slurm multitail"
+      git, mosh, node tmux neovim irssi and rcm htop fortune slurm multitail"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "

@@ -38,6 +38,7 @@ packages=(
 "node"
 "tmux"
 "neovim"
+"mosh"
 )
 
 for i in "${packages[@]}"
