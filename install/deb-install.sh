@@ -1,62 +1,79 @@
 #!/bin/sh
 
 
-echo "Welcome to deehuck's dotfiles for linux. big ups to mharington for the legwork"
+echo " Welcome to deehuck's dotfiles for linux. big ups to mharington for the legwork"
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
+
+echo " "
+echo "       .___.__                   __   /\            "
+echo "     __| _/|  |__  __ __   ____ |  | _)/ ______     "
+echo "    / __ | |  |  \|  |  \_/ ___\|  |/ / /  ___/     "
+echo "   / /_/ | |   Y  \  |  /\  \___|    <  \___ \      "
+echo "   \____ | |___|  /____/  \___  >__|_ \/____  >     "
+echo "        \/      \/            \/     \/     \/      "
+echo "     .___      __    _____.__.__                    "
+echo "   __| _/_____/  |__/ ____\__|  |   ____   ______   "
+echo "  / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/   "
+echo " / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \    "
+echo " \____ |\____/|__|  |__|  |__|____/\___  >____  >   "
+echo "      \/                               \/     \/    "
 
 
-# Install required programs for sexiness
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
+echo " "
 echo "Don't worry this repo isn't nefarious. Won't hurt yr apt-get one bit 😘"
-echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
-echo ""
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
+wait 3
+exit 0
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
-echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+echo " deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
 
 
-echo "making sure everything is installed on this machine...
+echo " making sure everything is installed on this machine...
       git, node tmux neovim irssi and rcm htop fortune slurm multitail"
-echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
-echo ""
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
+echo " "
 
 sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail
 
-echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
-echo ""
-echo "Installing necessary pip packages for nvim"
-echo ""
-echo "- -- --- ----- --- -- - -- --- ----- --- -- -"
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
+echo " "
+echo " Installing necessary pip packages for nvim"
+echo " "
+echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 sudo pip install neovim
 sudo pip3 install neovim
 
-echo "Cloning the dotfiles to .dotfiles directory"
-echo "Feel free to create your own custom branch and make changes"
+echo " Cloning the dotfiles to .dotfiles directory"
+echo " Feel free to create your own custom branch and make changes"
 
 cd $HOME
-git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
+git clone https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
 
 # Set up oh my zsh
-#echo "Checking and Install oh-my-zsh.sh"
+#echo " Checking and Install oh-my-zsh.sh"
 #
 #
 #ohmyzsh="$HOME/.oh-my-zsh"
 #if [ -f "$ohmyzsh" ]
 #then
-#  echo "Oh My ZSH! is already installed. Nothing to do"
+#  echo " Oh My ZSH! is already installed. Nothing to do"
 #else
-#  echo "Install Oh My ZSH!"
+#  echo " Install Oh My ZSH!"
 #  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #fi
 
 
 cd $HOME
 
-echo "running RCM's rcup command"
-echo "This will symlink the rc files in $HOME to those in the dotfiles directory"
+echo " running RCM's rcup command"
+echo " This will symlink the rc files in $HOME to those in the dotfiles directory"
 rcup -f
 
-echo "--------------------------------------------------------------"
-echo "Changing over to zsh"
+echo "     - -- --- ----- --- -- - -- --- ----- --- -- -  "
+echo " Changing over to zsh"
 sudo chsh -s $(which zsh)
 zsh
 
@@ -65,4 +82,4 @@ cd $HOME
 rm -rf .install
 
 
-echo "All done!"
+echo " All done!"
