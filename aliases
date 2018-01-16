@@ -275,3 +275,7 @@ alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 alias sysadmin='tmux a -t sysadmin'
 alias logwatch='sudo multitail -ev "DPT=22" --mergeall /var/log/syslog /var/log/auth.log /var/log/fail2ban.log /var/log/faillog':
 alias commit='local commitMessage='' && vared -p "Enter a commit message: " -c commitMessage && git commit -a -m "$commitMessage"'
+
+function dexec(){
+  sudo docker exec -it $1 /bin/bash
+}
