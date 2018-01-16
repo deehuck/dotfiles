@@ -98,5 +98,9 @@ uptime
 echo ""
 fortune
 echo ""
+cd .dotfiles
+git pull
+cd ~
+echo""
 echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
 
