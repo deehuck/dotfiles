@@ -4,68 +4,66 @@ This is a fork of mharrington's [github repo](https://github.com/mhartington/dot
 
 ## Requirements
 
-This Repo requires Python3, tmux, git, nvim, zsh, and fortune to work completely. Debian/Ubuntu also requires multitail for certain aliases.
+This Repo requires Python, Python 3, tmux, git, nvim, zsh, and fortune to work completely. You must also ensure the Neovim Python package is installed for Python and Python 3. You can do this using the command, `sudo pip install neovim` and `sudo pip3 install neovim`. Debian/Ubuntu also requires multitail for certain aliases.
 
 ## Install
 
-<span style='color:red'>__WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT ANDWISH TO SAVE YOUR CURRENT CONFIGS__
+<span style='color:red'>__WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT AND WISH TO SAVE YOUR CURRENT CONFIGS__</span>
 
 If you are installing on a fresh machine or would like to double check requirements, run one of the following scripts:
 
 ### OSX
 
-```
-curl https://raw.githubusercontent.com/deehuck/dotfiles/master/install/osx-install.sh | sh
+```sh
+curl https://git.brain.rip/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ```
 
 ### Debian/Ubuntu
 
-```
-curl https://raw.githubusercontent.com/deehuck/dotfiles/master/install/deb-install.sh | sh
+```sh
+curl https://git.brain.rip/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
 ```
 
 Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.
 
-If you already have the requirements installed you can use the following commands to install and link your resource files.
+Use the following instructions to install manually:
 
 ### OSX
 
-```
+```sh
 brew tap thoughtbot/formulae
 brew install rcm
-git https://github.com/deehuck/dotfiles.git ~/.dotfiles
+git https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
 
-### Debian/Ubuntu
+### Debian
 
-```
+```sh
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
 sudo apt-get install rcm
-git clone https://github.com/deehuck/dotfiles.git ~/.dotfiles
+git clone https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
 
-## Troubleshooting
+## Neovim and Python
 
-If deoplete gives an error on first run of nvim, run the following command to add python3 neovim support:
+Deoplete is a neovim plugin that gives auto-complete options across several languages. In order to work, it requires the neovim python package to be installed for both Python and Python3. If your Python installs are not set up oddly or you do not have the neovim package installed, you _will_ have deoplete issues.
 
+```sh
+sudo pip install neovim
+sudo pip3 install neovim
 ```
-pip3 install neovim
-```
 
-Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally after that.
+Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally. If you are still having issues, ensure that your python is installed to `/usr/lib/python` and `usr/lib/python3` on Linux. On a Mac, Python3 may be installed to `/usr/local/lib/python3`. This is fine and will not break neovim.
 
-### Issues
-
-Deoplete seems to break on debian machines with the current config. Works :100: otherwise.
 # mharrington's Notes
 
-Everything below is lifted from mharington's repo page. This will change overtime as I make my own changes.
+Everything below is reproduced from mharington's repo page. This will change overtime as I make my own changes.
 
 ## Note to iterm
 Iterm nightly is a must.
@@ -127,11 +125,6 @@ You can run `brew install tmux --head` and get all the colors for iterm nightly.
 
 ### Tmux powerline
 My status bar for tmux is custom, only using a few plugins for battery charge and memory usage. Was a nice experiment with the tmux API. Also it uses powerline symbols, which should be covered.
-
-
-<hr/>
-I think that's it, probably missed a few things here and there or spelled something wrong.
-This is more for my own sake when setting up a new machine so I can figure out what the fuck is actually going on.
 
 ## Inspiration
 - [mharrington's Dotfiles](https://github.com/mhartington/dotfiles)

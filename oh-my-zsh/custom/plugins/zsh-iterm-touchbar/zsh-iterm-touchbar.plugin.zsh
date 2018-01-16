@@ -136,7 +136,7 @@ function _displayDefault() {
     bindkey -s '^[OS' 'commit \n'
 
     echo -ne "\033]1337;SetKeyLabel=F6=📥\a"
-    bindkey -s '^[[17~' 'git pull $(git_current_branch) \n'
+    bindkey -s '^[[17~' "git pull origin $(git_current_branch) \n"
   fi
 
   # PACKAGE.JSON
