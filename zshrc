@@ -92,13 +92,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+RED='\033[0;31m'
+NC='\033[0m'
 source ~/.aliases
 uptime
 echo ""
 fortune
 echo ""
 cd .dotfiles
+echo "checking for dotfiles updates..."
+echo "${RED}you can always stop this if it gets annoying${NC}"
 git pull
 cd ~
 echo""
