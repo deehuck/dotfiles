@@ -71,14 +71,24 @@ git_unpushed_unpulled() {
   [ -n $arrows ] && echo -n "${arrows}"
 }
 
+pecho() {
+  if [ -n "$TMUX" ]
+  then
+    echo -ne "\ePtmux;\e$*\e\\"
+  else
+    echo -ne $*
+  fi
+}
+
 # F1-12: https://github.com/vmalloc/zsh-config/blob/master/extras/function_keys.zsh
 fnKeys=('^[OP' '^[OQ' '^[OR' '^[OS' '^[[15~' '^[[17~' '^[[18~' '^[[19~' '^[[20~' '^[[21~' '^[[23~' '^[[24~')
 touchBarState=''
 npmScripts=()
+gitBranches=()
 lastPackageJsonPath=''
 
 function _clearTouchbar() {
-  echo -ne "\033]1337;PopKeyLabels\a"
+  pecho "\033]1337;PopKeyLabels\a"
 }
 
 function _unbindTouchbar() {
@@ -93,9 +103,9 @@ function _displayDefault() {
 
   touchBarState=''
 
-  # CURRENT_DIR
+ # CURRENT_DIR
   # -----------
-  echo -ne "\033]1337;SetKeyLabel=F1=👉 $(echo $(pwd) | awk -F/ '{print $(NF-1)"/"$(NF)}')\a"
+  pecho "\033]1337;SetKeyLabel=F1=👉 $(echo $(pwd) | awk -F/ '{print $(NF-1)"/"$(NF)}')\a"
   bindkey -s '^[OP' 'pwd \n'
 
 
@@ -122,29 +132,34 @@ function _displayDefault() {
 
     [ -n "${indicators}" ] && touchbarIndicators="🔥[${indicators}]" || touchbarIndicators="🙌";
 
-    echo -ne "\033]1337;SetKeyLabel=F2=🎋 $(git_current_branch)\a"
-    echo -ne "\033]1337;SetKeyLabel=F3=$touchbarIndicators\a"
-    echo -ne "\033]1337;SetKeyLabel=F5=✉️\a";
+    pecho "\033]1337;SetKeyLabel=F2=🎋 $(git_current_branch)\a"
+    pecho "\033]1337;SetKeyLabel=F3=$touchbarIndicators\a"
+    pecho "\033]1337;SetKeyLabel=F5=✉️\a";
 
     # bind git actions
     bindkey -s '^[OQ' 'git branch -a \n'
     bindkey -s '^[OR' 'git status \n'
     bindkey -s '^[[15~' "git push origin $(git_current_branch) \n"
 
-    echo -ne "\033]1337;SetKeyLabel=F4=👊\a"
+    pecho "\033]1337;SetKeyLabel=F4=👊\a"
     local commitMessage=''
     bindkey -s '^[OS' 'commit \n'
 
-    echo -ne "\033]1337;SetKeyLabel=F6=📥\a"
+    pecho "\033]1337;SetKeyLabel=F6=📥\a"
     bindkey -s '^[[17~' "git pull origin $(git_current_branch) \n"
   fi
 
   # PACKAGE.JSON
   # ------------
-  # if [[ -f package.json ]]; then
-  #   echo -ne "\033]1337;SetKeyLabel=F5=⚡️ npm-run\a"
-  #   bindkey "${fnKeys[5]}" _displayNpmScripts
-  # fi
+  if [[ -f package.json ]]; then
+      if [[ -f yarn.lock ]]; then
+          pecho "\033]1337;SetKeyLabel=F7=🐱 yarn-run\a"
+          bindkey "${fnKeys[7]}" _displayYarnScripts
+      else
+          pecho "\033]1337;SetKeyLabel=F7=⚡️ npm-run\a"
+          bindkey "${fnKeys[7]}" _displayNpmScripts
+    fi
+  fi
 }
 
 function _displayNpmScripts() {
@@ -163,19 +178,70 @@ function _displayNpmScripts() {
   for npmScript in "$npmScripts[@]"; do
     fnKeysIndex=$((fnKeysIndex + 1))
     bindkey -s $fnKeys[$fnKeysIndex] "npm run $npmScript \n"
-    echo -ne "\033]1337;SetKeyLabel=F$fnKeysIndex=$npmScript\a"
+    pecho "\033]1337;SetKeyLabel=F$fnKeysIndex=$npmScript\a"
   done
 
-  echo -ne "\033]1337;SetKeyLabel=F1=👈 back\a"
+  pecho "\033]1337;SetKeyLabel=F1=👈 back\a"
+  bindkey "${fnKeys[1]}" _displayDefault
+}
+
+function _displayYarnScripts() {
+  # find available yarn run scripts only if new directory
+  if [[ $lastPackageJsonPath != $(echo "$(pwd)/package.json") ]]; then
+    lastPackageJsonPath=$(echo "$(pwd)/package.json")
+    yarnScripts=($(node -e "console.log($(yarn run --json 2>&1 | sed '4!d').data.items.filter(name => !name.includes(':')).sort((a, b) => a.localeCompare(b)).filter((name, idx) => idx < 12).join(' '))"))
+  fi
+
+  _clearTouchbar
+  _unbindTouchbar
+
+  touchBarState='yarn'
+
+  fnKeysIndex=1
+  for yarnScript in "$yarnScripts[@]"; do
+    fnKeysIndex=$((fnKeysIndex + 1))
+    bindkey -s $fnKeys[$fnKeysIndex] "yarn run $yarnScript \n"
+    pecho "\033]1337;SetKeyLabel=F$fnKeysIndex=$yarnScript\a"
+  done
+
+  pecho "\033]1337;SetKeyLabel=F1=👈 back\a"
+  bindkey "${fnKeys[1]}" _displayDefault
+}
+
+function _displayBranches() {
+  # List of branches for current repo
+  gitBranches=($(node -e "console.log('$(echo $(git branch))'.split(/[ ,]+/).toString().split(',').join(' ').toString().replace('* ', ''))"))
+
+  _clearTouchbar
+  _unbindTouchbar
+
+  # change to github state
+  touchBarState='github'
+
+  fnKeysIndex=1
+  # for each branch name, bind it to a key
+  for branch in "$gitBranches[@]"; do
+    fnKeysIndex=$((fnKeysIndex + 1))
+    bindkey -s $fnKeys[$fnKeysIndex] "git checkout $branch \n"
+    pecho "\033]1337;SetKeyLabel=F$fnKeysIndex=$branch\a"
+  done
+
+  pecho "\033]1337;SetKeyLabel=F1=👈 back\a"
   bindkey "${fnKeys[1]}" _displayDefault
 }
 
 zle -N _displayDefault
 zle -N _displayNpmScripts
+zle -N _displayYarnScripts
+zle -N _displayBranches
 
 precmd_iterm_touchbar() {
   if [[ $touchBarState == 'npm' ]]; then
     _displayNpmScripts
+  elif [[ $touchBarState == 'yarn' ]]; then
+    _displayYarnScripts
+  elif [[ $touchBarState == 'github' ]]; then
+    _displayBranches
   else
     _displayDefault
   fi
