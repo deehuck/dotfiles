@@ -40,7 +40,7 @@ echo " making sure everything is installed on this machine...
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh
+sudo apt-get -y install git zsh htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
