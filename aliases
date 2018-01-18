@@ -283,6 +283,12 @@ function dexec(){
   sudo docker exec -it $1 /bin/bash
 }
 
-
+function timestamp {
+  while read line
+  do
+    date "+ %m-%d-%y %H:%M:%S.%3N"
+    printf " $line"
+  done
+}
 
 # }}}
