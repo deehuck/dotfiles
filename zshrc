@@ -99,7 +99,7 @@ uptime
 echo ""
 fortune
 echo ""
-cd ~/.dotfiles
+cd .dotfiles
 echo "checking for dotfiles updates..."
 echo "${RED}you can always stop this if it gets annoying${NC}"
 git pull

@@ -387,9 +387,6 @@
   autocmd FileType vim setlocal foldmethod=marker
   autocmd FileType vim setlocal foldlevel=0
 
-  autocmd FileType py setlocal foldmethod=marker
-  autocmd FileType py setlocal foldmethod=marker
-
   autocmd FileType javascript,html,css,scss,typescript setlocal foldlevel=99
 
   autocmd FileType css,scss,json setlocal foldmethod=marker

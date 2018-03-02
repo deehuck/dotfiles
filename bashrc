@@ -51,14 +51,14 @@ fi
 function _git_changes {
 [[ $(git rev-parse --is-inside-work-tree 2>/dev/null) == true ]] || return 1
 
-local added_symbol="●"
-local unmerged_symbol="✗"
+local added_symbol="â"
+local unmerged_symbol="â"
 local modified_symbol="+"
-local clean_symbol="✔"
-local has_untracked_files_symbol="…"
+local clean_symbol="â"
+local has_untracked_files_symbol="â¦"
 
-local ahead_symbol="↑"
-local behind_symbol="↓"
+local ahead_symbol="â"
+local behind_symbol="â"
 
 local unmerged_count=0 modified_count=0 has_untracked_files=0 added_count=0 is_clean=""
 
@@ -133,7 +133,7 @@ local port="${1:-8000}"
 #    open "http://localhost:${port}/"
 open -a google\ chrome\ canary "http://localhost:${port}/" --args --disable-web-security
 # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-# And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
+# And serve everything as UTF-8 (although not technically correct, this doesnât break anything for binary files)
 python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
   }
 
@@ -293,3 +293,7 @@ alias x=extract
 
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+
+export PATH="$PATH:/Applications/Muse"
+
+export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
