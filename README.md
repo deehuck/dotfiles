@@ -1,6 +1,6 @@
 # dhuck's dotfile
 
-This is a fork of mharrington's [github repo](https://github.com/mhartington/dotfiles).
+This started as a fork of mharrington's [github repo](https://github.com/mhartington/dotfiles). I have since slimmed it down and modified it for my own use. There is a lot left from mharrington and I am forever grateful for his contribution.
 
 ## Requirements
 
