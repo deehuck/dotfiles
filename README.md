@@ -61,6 +61,8 @@ sudo pip3 install neovim
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally. If you are still having issues, ensure that your python is installed to `/usr/lib/python` and `usr/lib/python3` on Linux. On a Mac, Python3 may be installed to `/usr/local/lib/python3`. This is fine and will not break neovim.
 
+God bless Danny Brown. He's done so much with that goddamn voice of his
+
 # mharrington's Notes
 
 Everything below is reproduced from mharington's repo page. This will change overtime as I make my own changes.
