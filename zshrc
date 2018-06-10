@@ -106,4 +106,4 @@ echo ""
 #cd ~
 echo""
 echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
-
+export PATH=/home/dhuck/stage/bin:$PATH
