@@ -155,6 +155,7 @@
   set shortmess=atIc
   set isfname-==
   set spell
+  set mouse=a
 
   " Allow saving of files as sudo when I forgot to start vim using sudo.
   cmap w!! w !sudo tee > /dev/null %
@@ -408,7 +409,7 @@
 if has('macunix')
   set signcolumn=yes
 else
-  let g:gitgutter_sign_column_always = 1
+  set signcolumn=yes
 endif
 " }}}
 
@@ -552,15 +553,15 @@ endif
   endfunction
   let g:deoplete#file#enable_buffer_path=1
 
-  call deoplete#custom#set('buffer', 'mark', 'ℬ')
-  call deoplete#custom#set('ternjs', 'mark', '')
-  call deoplete#custom#set('omni', 'mark', '⌾')
-  call deoplete#custom#set('file', 'mark', 'file')
-  call deoplete#custom#set('jedi', 'mark', '')
-  call deoplete#custom#set('typescript', 'mark', '')
-  call deoplete#custom#set('neosnippet', 'mark', '')
+  call deoplete#custom#source('buffer', 'mark', 'ℬ')
+  call deoplete#custom#source('ternjs', 'mark', '')
+  call deoplete#custom#source('omni', 'mark', '⌾')
+  call deoplete#custom#source('file', 'mark', 'file')
+  call deoplete#custom#source('jedi', 'mark', '')
+  call deoplete#custom#source('typescript', 'mark', '')
+  call deoplete#custom#source('neosnippet', 'mark', '')
 
-  call deoplete#custom#set('typescript',  'rank', 630)
+  call deoplete#custom#source('typescript',  'rank', 630)
   " let g:deoplete#omni_patterns = {}
   " let g:deoplete#omni_patterns.html = ''
   function! Preview_func()
@@ -574,7 +575,7 @@ endif
 
   " let g:deoplete#enable_debug = 1
   " call deoplete#enable_logging('DEBUG', 'deoplete.log')
-  " call deoplete#custom#set('typescript', 'debug_enabled', 1)
+  " call deoplete#custom#source('typescript', 'debug_enabled', 1)
 "}}}
 
 " Emmet customization -------------------------------------------------------{{{
