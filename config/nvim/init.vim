@@ -155,6 +155,7 @@
   set shortmess=atIc
   set isfname-==
   set spell
+  set mouse=a
 
   " Allow saving of files as sudo when I forgot to start vim using sudo.
   cmap w!! w !sudo tee > /dev/null %
