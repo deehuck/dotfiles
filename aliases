@@ -281,3 +281,4 @@ function dexec(){
 }
 
 alias bbdev="ssh bb.dev -t tmux a -t dev"
+alias sauce="source .env/bin/activate"
