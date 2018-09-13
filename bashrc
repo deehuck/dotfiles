@@ -297,3 +297,6 @@ alias x=extract
 export PATH="$PATH:/Applications/Muse"
 
 export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
+
+# added by Anaconda3 installer
+export PATH="/home/dhuck/anaconda3/bin:$PATH"
