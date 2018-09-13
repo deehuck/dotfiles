@@ -21,7 +21,7 @@ echo "      \/                               \/     \/    "
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
-echo " Installing thoughtbot repo to install rcm "
+echo " Installing Repos for neovim and rcm"
 echo " Don't worry this repo isn't nefarious. Won't hurt yr apt-get one bit 😘"
 echo " "
 echo " Please enter your password to add deb http://apt.thoughtbot.com/debian/ "
@@ -31,6 +31,7 @@ echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo " deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt-get update
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
@@ -48,8 +49,8 @@ echo " Installing necessary pip packages for nvim"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo pip install neovim
-sudo pip3 install neovim
+pip install --install neovim
+pip3 install --install  neovim
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -58,7 +59,7 @@ echo " Feel free to create your own custom branch and make changes"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-git clone https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
+git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
 
 # Set up oh my zsh
 #echo " Checking and Install oh-my-zsh.sh"
