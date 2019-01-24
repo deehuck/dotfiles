@@ -21,7 +21,7 @@ curl https://gitlab.com/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
 ### Debian/Ubuntu
 
 ```sh
-curl https://gitlab.com/dhuck/dotfiles/raw/master/install/deb-install.sh | sh
+curl https://gitlab.com/dhuck/dotfiles/raw/master/install/ubuntu-install.sh | sh
 ```
 
 Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.
@@ -45,7 +45,7 @@ wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
 sudo apt-get update
 sudo apt-get install rcm
-git clone https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
+git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
@@ -55,8 +55,8 @@ rcup
 Deoplete is a neovim plugin that gives auto-complete options across several languages. In order to work, it requires the neovim python package to be installed for both Python and Python3. If your Python installs are not set up oddly or you do not have the neovim package installed, you _will_ have deoplete issues.
 
 ```sh
-sudo pip install neovim
-sudo pip3 install neovim
+ip install --install neovim
+pip3 install --install neovim
 ```
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally. If you are still having issues, ensure that your python is installed to `/usr/lib/python` and `usr/lib/python3` on Linux. On a Mac, Python3 may be installed to `/usr/local/lib/python3`. This is fine and will not break neovim.
