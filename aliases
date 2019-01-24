@@ -280,4 +280,4 @@ function dexec(){
   sudo docker exec -it $1 /bin/bash
 }
 
-alias bbdev="ssh bb.dev -t tmux a -t dev"
+alias dev="ssh saturn -t tmux a -t dev"
