@@ -2,6 +2,8 @@
 
 This started as a fork of mharrington's [github repo](https://github.com/mhartington/dotfiles). I have since slimmed it down and modified it for my own use. There is a lot left from mharrington and I am forever grateful for his contribution.
 
+There are different branches for different operating systems. The installation process will be slightly different for each. The default branch installs the dot files for macos. To change to a different branch, simply checkout that branch and run `source .zshrc`.
+
 ## Requirements
 
 This Repo requires Python, Python 3, tmux, git, nvim, zsh, and fortune to work completely. You must also ensure the Neovim Python package is installed for Python and Python 3. You can do this using the command, `sudo pip install neovim` and `sudo pip3 install neovim`. Debian/Ubuntu also requires multitail for certain aliases.
@@ -28,9 +30,11 @@ echo "deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install rcm
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+git checkout debian
 cd $HOME
 rcup
-```
+```ec
 
 ## Neovim and Python
 
