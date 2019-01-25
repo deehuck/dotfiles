@@ -10,24 +10,6 @@ This Repo requires Python, Python 3, tmux, git, nvim, zsh, and fortune to work c
 
 <span style='color:red'>__WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT AND WISH TO SAVE YOUR CURRENT CONFIGS__</span>
 
-If you are installing on a fresh machine or would like to double check requirements, run one of the following scripts:
-
-### OSX
-
-```sh
-curl https://gitlab.com/dhuck/dotfiles/raw/master/install/osx-install.sh | sh
-```
-
-### Debian/Ubuntu
-
-```sh
-curl https://gitlab.com/dhuck/dotfiles/raw/master/install/ubuntu-install.sh | sh
-```
-
-Note: The Debian/Ubuntu scripts will also install slurm, htop, and irssi. These will make you a better human.
-
-Use the following instructions to install manually:
-
 ### OSX
 
 ```sh
