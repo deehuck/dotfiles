@@ -37,8 +37,8 @@ rcup
 Deoplete is a neovim plugin that gives auto-complete options across several languages. In order to work, it requires the neovim python package to be installed for both Python and Python3. If your Python installs are not set up oddly or you do not have the neovim package installed, you _will_ have deoplete issues.
 
 ```sh
-ip install --install neovim
-pip3 install --install neovim
+pip install neovim
+pip3 install neovim
 ```
 
 Restart neovim and run the :UpdateRemotePlugins and deoplete should operate normally. If you are still having issues, ensure that your python is installed to `/usr/lib/python` and `usr/lib/python3` on Linux. On a Mac, Python3 may be installed to `/usr/local/lib/python3`. This is fine and will not break neovim.
