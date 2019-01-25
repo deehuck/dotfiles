@@ -34,7 +34,7 @@ cd ~/.dotfiles
 git checkout debian
 cd $HOME
 rcup
-```ec
+```
 
 ## Neovim and Python
 
