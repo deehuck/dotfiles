@@ -281,3 +281,8 @@ function dexec(){
 }
 
 alias dev="ssh saturn -t tmux a -t dev"
+alias kivy='kivy3'
+
+alias buildozer-docker='docker run -it -v ${PWD}:/buildozer/ jedie/buildozer bash'
+
+alias activate='source .env/bin/activate'
