@@ -108,7 +108,8 @@ echo""
 echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
 export PATH=~/Library/Python/3.6/bin:$PATH
 
-source /etc/profile.d/cuda.sh
+# re-enable after installing cuda
+# source /etc/profile.d/cuda.sh
 
 # added by Anaconda3 installer
 export PATH="/home/dhuck/anaconda3/bin:$PATH"
