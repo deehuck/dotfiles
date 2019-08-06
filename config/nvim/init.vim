@@ -75,7 +75,7 @@
   call dein#add('ujihisa/neco-look')
 " call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
   call dein#add('zchee/deoplete-jedi')
-  call dein#add('zchee/nvim-go', {'build': 'gb build', 'on_ft': 'go'})
+ " call dein#add('zchee/nvim-go', {'build': 'gb build', 'on_ft': 'go'})
   call dein#add('zchee/deoplete-go')
   call dein#add('junegunn/limelight.vim')
   call dein#add('Konfekt/FastFold')
