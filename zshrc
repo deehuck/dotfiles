@@ -112,5 +112,5 @@ export PATH=~/Library/Python/3.6/bin:$PATH
 # source /etc/profile.d/cuda.sh
 
 # added by Anaconda3 installer
-export PATH="/usr/local/cuda/bin:/home/dhuck/anaconda3/bin:$PATH"
+export PATH="/usr/local/cuda/bin:/home/dhuck/anaconda3/bin:/home/dhuck/.local/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
