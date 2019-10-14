@@ -114,6 +114,7 @@
 " System Settings  ----------------------------------------------------------{{{
 
   source ~/.local.vim
+  autocmd BufNewFile,BufRead *.s   set syntax=armasm
 " Neovim Settings
   set termguicolors
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
