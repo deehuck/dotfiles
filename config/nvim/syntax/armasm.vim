@@ -22,7 +22,7 @@ setlocal iskeyword+=.
 syn case match
 syn keyword armasmTodo		NOTE TODO XXX contained
 
-
+syn spell notoplevel
 syn case ignore
 
 syn match armasmIdentifier	"[a-z_$][a-z0-9_$]*"
