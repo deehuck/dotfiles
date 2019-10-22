@@ -59,6 +59,8 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
+cd .dotfiles
+git checkout ubuntu
 
 cd $HOME
 
