@@ -48,6 +48,7 @@ echo " Installing necessary pip packages for nvim"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
+cd $HOME
 pip install --user neovim
 pip3 install --user  neovim
 
@@ -59,6 +60,7 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
+cd .dotfiles
 git checkout ubuntu
 
 cd $HOME
