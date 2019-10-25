@@ -50,6 +50,7 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
+mkdir .cache
 sudo -u $(whoami) pip install --user neovim
 sudo -u $(whoami) pip3 install --user neovim
 
