@@ -22,7 +22,7 @@ setlocal iskeyword+=.
 syn case match
 syn keyword armasmTodo		NOTE TODO XXX contained
 
-syn spell notoplevel
+"syn spell notoplevel
 syn case ignore
 
 syn match armasmIdentifier	"[a-z_$][a-z0-9_$]*"
@@ -75,12 +75,12 @@ syn match armasmBuiltIn		"{NOSWST}"
 
 " TODO: consider handling for string expansions ($x)
 
-syn match armasmComment		";.*" contains=armasmTodo
-syn match armasmComment		"@.*" contains=armasmTodo
-syn region armasmComment	matchgroup=armasmCommentStart start="//" end="\n" contains=armasmTodo extend
+syn match armasmComment		";.*" contains=armasmTodo,@Spell
+syn match armasmComment		"@.*" contains=armasmTodo,@Spell
+syn region armasmComment	matchgroup=armasmCommentStart start="//" end="\n" contains=armasmTodo,@Spell extend
 syn match armasmIfdef		"\#\(include\|ifdef\|ifndef\|define\|error\|if\|endif\|else\|elif\)"
 
-syn region armasmString		start=+"+ end=+"+ oneline
+syn region armasmString		start=+"+ end=+"+ oneline contains=@Spell
 
 syn match armasmOperator	":BASE:"
 syn match armasmOperator	":INDEX:"
@@ -908,18 +908,19 @@ syn keyword armasmOpcode	ADRL ADREQL ADRNEL ADRCSL ADRHSL ADRCCL ADRLOL
 syn keyword armasmOpcode	ADRMIL ADRPLL ADRVSL ADRVCL ADRHIL ADRLSL
 syn keyword armasmOpcode	ADRGEL ADRLTL ADRGTL ADRLEL ADRALL
 
-syn keyword armasmDirective	ADDRESS ALIGN AREA ASSERT CN CODE16 CODE32 CP
-syn keyword armasmDirective	DATA DCB DCD DCDO DCDU DCFD DCFDU DCFS DCFSU
-syn keyword armasmDirective	DCI DCQ DCQU DCW DCWU DN ELSE END ENDFUNC ENDIF
-syn keyword armasmDirective	ENDP ENTRY EQU EXPORT EXPORTAS EXTERN FIELD FN
-syn keyword armasmDirective	FRAME FUNCTION GBLA GBLL GBLS GET GLOBAL IF
-syn keyword armasmDirective	IMPORT INCBIN INCLUDE INFO KEEP LCLA LCLL LCLS
-syn keyword armasmDirective	LTORG MACRO MAP MEND MEXIT NOFP OPT POP PROC
-syn keyword armasmDirective	PUSH REGISTER REMEMBER REQUIRE RESTORE RLIST RN
-syn keyword armasmDirective	ROUT SAVE SETA SETL SETS SN SPACE STATE SUBT
-syn keyword armasmDirective	TTL WEND WHILE ENDM
-syn keyword armasmDirective	ASSOC CODE COMDEF COMMON NOINIT READONLY
-syn keyword armasmDirective	READWRITE WEAK
+syn keyword armasmDirective	.ADDRESS .ALIGN .AREA .ASCIZ .ASSERT .CN .CODE16 .CODE32 .CP
+syn keyword armasmDirective	.DATA .DCB .DCD .DCDO .DCDU .DCFD .DCFDU .DCFS .DCFSU
+syn keyword armasmDirective	.DCI .DCQ .DCQU .DCW .DCWU .DN .ELSE .END .ENDFUNC .ENDIF
+syn keyword armasmDirective	.ENDP .ENTRY .EQU .EXPORT .EXPORTAS .EXTERN .FIELD .FN
+syn keyword armasmDirective	.FRAME .FUNCTION .GBLA .GBLL .GBLS .GET .GLOBAL .IF
+syn keyword armasmDirective	.IMPORT .INCBIN .INCLUDE .INFO .KEEP .LCLA .LCLL .LCLS
+syn keyword armasmDirective	.LTORG .MACRO .MAP .MEND .MEXIT .NOFP .OPT .POP .PROC
+syn keyword armasmDirective	.PUSH .REGISTER .REMEMBER .REQUIRE .RESTORE .RLIST .RN
+syn keyword armasmDirective	.ROUT .SAVE .SETA .SETL .SETS .SN .SPACE .STATE .SUBT
+syn keyword armasmDirective	.TTL .WEND .WHILE .ENDM
+syn keyword armasmDirective	.ASSOC .CODE .COMDEF .COMMON .NOINIT .READONLY
+syn keyword armasmDirective	.READWRITE .WEAK
+syn keyword armasmDirective     .GLOBL .TEXT
 
 " ARMv7 opcoes
 "
@@ -960,6 +961,7 @@ syn keyword armasmOpcode	BR UBFX
 syn keyword armasmOpcode	LDP STP
 syn keyword armasmOpcode	IC CPUID TLB AT TLBI SYS SYSL
 
+syn cluster NoSpell  add=armasmOpcode
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
@@ -991,7 +993,7 @@ if version >= 508 || !exists("did_armasm_syntax_inits")
   HiLink armasmFloat		Float
   HiLink armasmBoolean		Boolean
   HiLink armasmBuiltIn		Constant
-  HiLink armasmIdentifier	Identifier
+  HiLink armasmIdentifier	Normal
   HiLink armasmAddress		Special
   HiLink armasmInstrBin		Todo
   HiLink armasmIfdef		PreCondit
