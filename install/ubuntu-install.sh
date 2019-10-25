@@ -29,10 +29,10 @@ echo " to /etc/apt/sources.list.d/ "
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-echo "sudo unlocked!"
-add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
-apt-add-repository ppa:neovim-ppa/stable > /dev/null
-apt-get update > /dev/null
+sudo echo "sudo unlocked!"
+sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
+sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
+sudo apt-get update > /dev/null
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -41,7 +41,7 @@ echo " making sure everything is installed on this machine...
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential > /dev/null
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential > /dev/null
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -50,8 +50,8 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
-pip install --install --user neovim
-pip3 install --install --user neovim
+sudo -u $(whoami) pip install --user neovim
+sudo -u $(whoami) pip3 install --user neovim
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
