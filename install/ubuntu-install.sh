@@ -49,6 +49,7 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
+read pause
 pip install --user neovim
 pip3 install --user  neovim
 
