@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 echo " Welcome to deehuck's dotfiles for linux. big ups to mharington for the legwork"
@@ -29,7 +29,7 @@ echo " to /etc/apt/sources.list.d/ "
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo echo "Got password!"
+sudo echo "sudo unlocked!\n"
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
 sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
 sudo apt-get update
@@ -51,8 +51,8 @@ echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
 read pause
-pip install --user neovim
-pip3 install --user  neovim
+pip install --install --user neovim
+pip3 install --install --user neovim
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
