@@ -65,7 +65,7 @@ fi
 echo "   - -- --- ----- --- -- - -- --- ----- --- -- -   "
 
 echo "Cloning Mike's dotfiles insto .dotfiles"
-git clone https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
+git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
 
 cd .dotfiles
 # git submodule update --init --recursive
@@ -86,17 +86,6 @@ chsh -s $(which zsh)
 echo "You'll need to log out for this to take effect"
 echo "   - -- --- ----- --- -- - -- --- ----- --- -- -   "
 
-# echo "running osx defaults"
-# ~./osx.sh
-
-# echo "   - -- --- ----- --- -- - -- --- ----- --- -- -   "
-# Removing hammerspoon until a later date.
-
-# echo "Downloading Hammerspoon"
-# cd ~/Downloads
-# curl https://github.com/Hammerspoon/hammerspoon/releases/download/0.9.43/Hammerspoon-0.9.43.zip | unzip
-# unzip Hammerspoon-0.9.43.zip
-# mv Hammerspoon /Applications/
 echo 'done'
 echo "   - -- --- ----- --- -- - -- --- ----- --- -- -   "
 echo "All done!"

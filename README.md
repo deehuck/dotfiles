@@ -10,14 +10,14 @@ This Repo requires Python, Python 3, tmux, git, nvim, zsh, and fortune to work c
 
 ## Install
 
-<span style='color:red'>__WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT AND WISH TO SAVE YOUR CURRENT CONFIGS__</span>
+__WARNING: THESE SCRIPTS WILL OVERWRITE YOUR CURRENT .ALIAS, .BASHRC, .VIMRC, AND OTHER CONFIG  FILES. PLEASE BACK THESE UP IF YOU ARE WISHING TO TRY THIS OUT AND WISH TO SAVE YOUR CURRENT CONFIGS__
 
 ### OSX
 
 ```sh
 brew tap thoughtbot/formulae
 brew install rcm
-git https://git.brain.rip/dhuck/dotfiles.git ~/.dotfiles
+git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
 cd $HOME
 rcup
 ```
