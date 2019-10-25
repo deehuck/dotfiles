@@ -114,3 +114,4 @@ export PATH=~/Library/Python/3.6/bin:$PATH
 # added by Anaconda3 installer
 export PATH="/usr/local/cuda/bin:/home/dhuck/anaconda3/bin:/home/dhuck/.local/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+cd ~ # go home (when changing users)
