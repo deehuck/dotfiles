@@ -51,8 +51,8 @@ echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
 mkdir .cache
-sudo -u $(whoami) pip install --user neovim
-sudo -u $(whoami) pip3 install --user neovim
+pip install --user neovim
+pip3 install --user neovim
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
