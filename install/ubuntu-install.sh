@@ -29,8 +29,7 @@ echo " to /etc/apt/sources.list.d/ "
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
-echo " deb http://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
+sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt-get update
 
@@ -41,7 +40,7 @@ echo " making sure everything is installed on this machine...
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -49,8 +48,8 @@ echo " Installing necessary pip packages for nvim"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-pip install --install neovim
-pip3 install --install  neovim
+pip install --user neovim
+pip3 install --user  neovim
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -60,20 +59,6 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
-
-# Set up oh my zsh
-#echo " Checking and Install oh-my-zsh.sh"
-#
-#
-#ohmyzsh="$HOME/.oh-my-zsh"
-#if [ -f "$ohmyzsh" ]
-#then
-#  echo " Oh My ZSH! is already installed. Nothing to do"
-#else
-#  echo " Install Oh My ZSH!"
-#  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#fi
-
 
 cd $HOME
 
@@ -99,7 +84,7 @@ echo " cancel this process. "
 echo " "
 echo "     - -- --- ----- --- -- - -- --- ----- --- -- -  "
 
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh $USER
 echo "     - -- --- ----- --- -- - -- --- ----- --- -- -  "
 echo " "
 

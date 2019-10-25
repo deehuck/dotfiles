@@ -19,6 +19,7 @@ endif
 
 setlocal iskeyword+=.
 
+syn spell notoplevel
 syn case match
 syn keyword armasmTodo		NOTE TODO XXX contained
 
