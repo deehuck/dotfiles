@@ -32,7 +32,7 @@ echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 sudo echo "sudo unlocked!\n"
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
 sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
-sudo apt-get update
+sudo apt-get update > /dev/null
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
