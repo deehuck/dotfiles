@@ -29,6 +29,7 @@ echo " to /etc/apt/sources.list.d/ "
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
+sudo echo "Got password!"
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
 sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
 sudo apt-get update
