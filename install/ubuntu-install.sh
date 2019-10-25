@@ -29,8 +29,8 @@ echo " to /etc/apt/sources.list.d/ "
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-sudo apt-add-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm > /dev/null
+sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
 sudo apt-get update
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
@@ -40,7 +40,7 @@ echo " making sure everything is installed on this machine...
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential > /dev/null
 
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 echo " "
@@ -59,9 +59,9 @@ echo " Feel free to create your own custom branch and make changes"
 echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
-git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
+git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles > /dev/null
 cd .dotfiles
-git checkout ubuntu
+git checkout ubuntu > /dev/null
 
 cd $HOME
 
