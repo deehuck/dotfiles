@@ -59,6 +59,7 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
+git checkout ubuntu
 
 cd $HOME
 
@@ -78,15 +79,11 @@ rm -rf .install
 echo " "
 echo " Changing over to zsh..."
 echo " "
-echo " This operation requires your password. Enter your password to change the de- "
-echo " fault shell to zsh. If you would like to keep bash as your default shell to "
-echo " cancel this process. "
-echo " "
 echo "     - -- --- ----- --- -- - -- --- ----- --- -- -  "
 
 sudo chsh -s /bin/zsh $USER
-echo "     - -- --- ----- --- -- - -- --- ----- --- -- -  "
-echo " "
+
+echo " All done! "
 
 zsh
 
