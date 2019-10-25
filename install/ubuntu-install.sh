@@ -50,7 +50,7 @@ echo " "
 echo "  - -- --- ----- --- -- - -- --- ----- --- -- -"
 
 cd $HOME
-mkdir .cache
+sudo rm -rf .cache > /dev/null
 pip install --user neovim
 pip3 install --user neovim
 
