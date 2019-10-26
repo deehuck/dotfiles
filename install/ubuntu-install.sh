@@ -41,7 +41,7 @@ fi
 echo -e "$checkbox Installing Repos for neovim and rcm$normal"
 
 if [ ! -d ".cache" ]; then
-    echo -e "Creating cache directory"
+    echo -e "$checkbox Creating cache directory"
     mkdir $HOME/.cache
 fi
 
@@ -51,9 +51,10 @@ sudo apt-add-repository ppa:neovim-ppa/stable > /dev/null
 sudo apt-get update > /dev/null
 
 echo -e "$checkbox making sure everything is installed on this machine...
-      git, mosh, node tmux neovim irssi and rcm htop fortune slurm multitail"
+      $normal (git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip
+       python3-pip build-essential)"
 
-sudo apt-get -y install git htop fortune nodejs tm/:ux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential > /dev/null
+sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm multitail mosh python-pip python3-pip build-essential > /dev/null
 
 echo -e "$checkbox Installing necessary pip packages for nvim"
 
@@ -62,15 +63,14 @@ pip install --user neovim > /dev/null
 pip3 install --user neovim > /dev/null
 
 echo -e "$checkbox Installing numpy, scipy, pandas, altair, matplotlib "
-pip install numpy, scipy, pandas, altair, matplotlib > /dev/null
-pip3 install numpy, scipy, pandas, altair, matplotlib > /dev/null
+pip install numpy scipy pandas altair matplotlib > /dev/null
+pip3 install numpy scipy pandas altair matplotlib > /dev/null
 
 echo -e "$checkbox Cloning the dotfiles to .dotfiles directory"
-echo -e "$checkbox Feel free to create your own custom branch and make changes"
 
-git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles > /dev/null
+git clone --quiet https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles > /dev/null
 cd .dotfiles
-git checkout ubuntu > /dev/null
+git checkout --quiet ubuntu > /dev/null
 
 cd $HOME
 
@@ -83,7 +83,7 @@ rcup -f
 rm -rf .install
 
 echo -e "$checkbox Updating nvim plugins"
-echo -ne '\n' | nvim +qall
+echo -ne "\n" | nvim +qall
 
 echo -e "$checkbox Setting zsh as default shell"
 
