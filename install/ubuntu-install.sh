@@ -40,7 +40,7 @@ else
     echo " "
     echo -e "$checkbox Installing Repos for neovim and rcm$normal"
 
-    if [ ! -d ".cache" ]; then
+    if [ ! -d "$HOME/.cache" ]; then
         echo -e "$checkbox Creating cache directory$normal"
         mkdir $HOME/.cache
     fi
