@@ -75,7 +75,6 @@ git checkout --quiet ubuntu > /dev/null
 cd $HOME
 
 echo -e "$checkbox running RCM's rcup command"
-echo -e "$checkbox This will symlink the rc files in $HOME to those in the dotfiles directory"
 
 rcup -f
 
