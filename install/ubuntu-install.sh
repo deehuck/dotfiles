@@ -39,7 +39,6 @@ sudo apt-get -y install git htop fortune nodejs tmux slurm neovim irssi rcm mult
 echo " Installing necessary pip packages for nvim"
 
 cd $HOME
-sudo rm -rf .cache > /dev/null
 pip install --user neovim
 pip3 install --user neovim
 
