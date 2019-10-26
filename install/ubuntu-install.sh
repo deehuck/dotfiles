@@ -30,7 +30,7 @@ echo -e " "
 echo -e "$redblinkbold WARNING! $unblink- This may overwrite many of your current dotfiles"
 echo -e "This is your only warning. If you want to back up your files do so now."
 echo -e " "
-read -p "Do you want to continue? [y/N] " -n 1 -r
+read -p "Do you want to continue? [y/N] " -n 1 -r < /dev/tty
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo -ne $normal
