@@ -35,7 +35,7 @@ read -p "Do you want to continue? [y/N] " -n 1 -r < /dev/tty
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo -ne $normal
     echo "Exiting..."
-    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1
 fi
 
 echo -e "$checkbox Installing Repos for neovim and rcm$normal"
