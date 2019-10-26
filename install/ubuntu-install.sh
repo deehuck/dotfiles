@@ -1,5 +1,5 @@
 #!/bin/bash
-checkbox="\e[1m\e39m[\e[32m✔\e[39m]\e[34m"
+checkbox="\e[1m\e[39m[\e[32m✔\e[39m]\e[34m"
 normal="\e[39m\e[0m\e[25m"
 green="\e[92m"
 blink="\e[5m"
@@ -37,7 +37,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Exiting..."
     [[ "$0" = "$BASH_SOURCE" ]] && exit 1
 else
-
+    echo " "
     echo -e "$checkbox Installing Repos for neovim and rcm$normal"
 
     if [ ! -d ".cache" ]; then
