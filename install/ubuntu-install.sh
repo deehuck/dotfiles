@@ -1,10 +1,10 @@
 #!/bin/bash
-checkbox="\e[1m[\e[32m✔\e[39m]\e[34m"
+checkbox="\e[1m\e39m[\e[32m✔\e[39m]\e[34m"
 normal="\e[39m\e[0m\e[25m"
 green="\e[92m"
 blink="\e[5m"
 bold="\e[1m"
-redblinkbold="\e[31m\[5m\e[1m"
+redblinkbold="\e[31m\e[5m\e[1m"
 unblink="\e[25m"
 
 
@@ -30,7 +30,7 @@ echo -e " "
 echo -e "$redblinkbold WARNING! $unblink- This may overwrite many of your current dotfiles"
 echo -e "This is your only warning. If you want to back up your files do so now."
 echo -e " "
-read -p "Do you want to continue? [y/N] "
+read -p "Do you want to continue? [y/N] " -n 1 -r
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo -ne $normal
@@ -41,7 +41,7 @@ fi
 echo -e "$checkbox Installing Repos for neovim and rcm$normal"
 
 if [ ! -d ".cache" ]; then
-    echo -e "$checkbox Creating cache directory"
+    echo -e "$checkbox Creating cache directory$normal"
     mkdir $HOME/.cache
 fi
 
@@ -80,12 +80,9 @@ echo -e "$checkbox This will symlink the rc files in $HOME to those in the dotfi
 rcup -f
 
 #Clean up superfluous files created by rcup
-rm -rf .install
+rm -rf .install .LICENSE .README.md .TODO
 
-echo -e "$checkbox Updating nvim plugins"
-echo -ne "\n" | nvim +qall
-
-echo -e "$checkbox Setting zsh as default shell"
+echo -e "$checkbox Setting zsh as default shell (This may ask for your password again)$normal"
 
 sudo chsh -s /bin/zsh $USER
 
