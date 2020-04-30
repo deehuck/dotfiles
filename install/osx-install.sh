@@ -28,17 +28,21 @@ else
   echo "Homebrew is not installed, installing now"
   echo "This may take a while"
   echo "Homebrew requires osx command lines tools, please download xcode first"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # lua is required with hammerspoon
 packages=(
 "git"
 "node"
+"htop"
 "tmux"
 "neovim"
 "mosh"
+"python"
+"ruby"
+"go"
+"fortune"
 )
 
 for i in "${packages[@]}"
@@ -64,7 +68,7 @@ fi
 # Now lets clone my dotfiles repo into .dotfiles/
 echo "   - -- --- ----- --- -- - -- --- ----- --- -- -   "
 
-echo "Cloning Mike's dotfiles insto .dotfiles"
+echo "Cloning dhucks's dotfiles into .dotfiles"
 git clone https://gitlab.com/dhuck/dotfiles.git ~/.dotfiles
 
 cd .dotfiles
