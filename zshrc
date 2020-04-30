@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 RED='\033[0;31m'
 NC='\033[0m'
 source ~/.aliases
+source ~/.local-aliases
 uptime
 echo ""
 fortune
@@ -107,3 +108,6 @@ echo ""
 echo""
 echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
 export PATH=~/Library/Python/3.6/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
