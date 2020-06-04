@@ -106,7 +106,8 @@ echo ""
 #cd ~
 echo""
 echo "- --- --- ----- --- -- - --- ----- --- -- - -- --- ----- --- -- - --- ----- --- -- -"
-export PATH=~/Library/Python/3.6/bin:$PATH
+export PY_USR_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
+export PATH=:$PY_USR_BIN:$PATH
 
 # re-enable after installing cuda
 # source /etc/profile.d/cuda.sh
@@ -115,3 +116,5 @@ export PATH=~/Library/Python/3.6/bin:$PATH
 export PATH="/usr/local/cuda/bin:/home/dhuck/anaconda3/bin:/home/dhuck/.local/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 cd ~ # go home (when changing users)
+
+export BACKGROUND=~/Backgrounds/starryroad.jpg

@@ -116,7 +116,6 @@
   source ~/.local.vim
 " Neovim Settings
   autocmd BufNewFile,BufRead *.s   set ft=armasm
-  set termguicolors
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
   set clipboard+=unnamedplus
   set pastetoggle=<f6>
@@ -238,8 +237,9 @@
 
 " Themes, Commands, etc  ----------------------------------------------------{{{
   syntax on
-  colorscheme OceanicNext
-  let g:OceanicNext_italic = 1
+ " colorscheme OceanicNext
+  call dein#add('dylanaraps/wal.vim')
+ "let g:OceanicNext_italic = 1
 "}}}
 
 " MarkDown ------------------------------------------------------------------{{{
@@ -552,7 +552,7 @@ endif
   function! Multiple_cursors_after()
     let b:deoplete_disable_auto_complete=0
   endfunction
-  let g:deoplete#file#enable_buffer_path=1
+  "let g:deoplete#file#enable_buffer_path=1
 
   call deoplete#custom#source('buffer', 'mark', 'ℬ')
   call deoplete#custom#source('ternjs', 'mark', '')
@@ -571,8 +571,8 @@ endif
      endif
   endfunction
   autocmd WinEnter * call Preview_func()
-  let g:deoplete#ignore_sources = {}
-  let g:deoplete#ignore_sources._ = ['around']
+ " let g:deoplete#ignore_sources = {}
+ " let g:deoplete#ignore_sources._ = ['around']
 
   " let g:deoplete#enable_debug = 1
   " call deoplete#enable_logging('DEBUG', 'deoplete.log')
@@ -644,7 +644,7 @@ endif
 
   nnoremap <silent> <c-p> :Denite file_rec<CR>
   nnoremap <silent> <leader>h :Denite  help<CR>
-  nnoremap <silent> <leader>c :Denite colorscheme<CR>
+ " nnoremap <silent> <leader>c :Denite colorscheme<CR>
   nnoremap <silent> <leader>b :Denite buffer<CR>
   nnoremap <silent> <leader>a :Denite grep:::!<CR>
   nnoremap <silent> <leader>u :call dein#update()<CR>
